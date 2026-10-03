@@ -1,0 +1,3 @@
+# one line ending everywhere: lf. python, git bash and powershell read lf on
+# every platform, and the diffs stay the same on windows and linux.
+* text=auto eol=lf

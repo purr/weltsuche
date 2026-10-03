@@ -1,0 +1,23 @@
+{
+  "name": "weltsuche",
+  "version": "0.2.0",
+  "description": "multilingual web search and page reading: google (via startpage), baidu, yandex, naver, duckduckgo, brave and wikipedia per language and region, code, packages, developer communities and papers, pages read with a browser fingerprint, and reddit, x, youtube transcripts, instagram, tiktok, threads, bluesky, telegram and stack exchange read through their apis, embeds or public frontends",
+  "author": {
+    "name": "weltsuche"
+  },
+  "keywords": ["search", "multilingual", "research", "mcp", "reddit", "youtube"],
+  "mcpServers": {
+    "weltsuche": {
+      "type": "stdio",
+      "alwaysLoad": true,
+      "command": "uv",
+      "args": [
+        "run", "--directory", "${CLAUDE_PLUGIN_ROOT}", "--frozen", "--quiet",
+        "python", "-m", "weltsuche", "--data", "${CLAUDE_PLUGIN_DATA}", "serve"
+      ],
+      "env": {
+        "UV_PROJECT_ENVIRONMENT": "${CLAUDE_PLUGIN_DATA}/venv"
+      }
+    }
+  }
+}

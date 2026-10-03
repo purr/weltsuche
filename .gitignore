@@ -1,0 +1,23 @@
+# the environment uv builds for a checkout (the plugin keeps its own in
+# ${CLAUDE_PLUGIN_DATA}/venv)
+.venv/
+
+# runtime data of a checkout: config.py, state, cache, cookies, log
+data/
+
+# python
+__pycache__/
+*.py[cod]
+
+# never committed, even by accident
+.env
+
+# the parser test suite: saved result pages, kept locally, not published
+tests/
+
+# editors and os
+.idea/
+.vscode/
+*.swp
+.DS_Store
+Thumbs.db

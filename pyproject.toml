@@ -1,0 +1,35 @@
+[project]
+name = "weltsuche"
+version = "0.2.0"
+description = "multilingual web search and page reading for claude code, as an mcp server"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    # mcp sdk. below 2: the 2.x line changed the server api, and this code
+    # targets the 1.x FastMCP + stdio_server surface
+    "mcp>=1.20,<2",
+    # http with browser tls/http2 fingerprints; pre-1.0, so the major is pinned
+    "curl_cffi>=0.11,<1",
+    # readable text out of html
+    "trafilatura>=2.0,<3",
+    # fast html parser for result pages and visible text; 0.4.12 is the version
+    # strip_tags(recursive=) and insert_after(str) were verified against
+    "selectolax>=0.4.12,<1",
+    # text out of pdf links
+    "pypdf>=5,<7",
+    # charset guess for pages that declare none and are not utf-8
+    "charset_normalizer>=3.4,<4",
+    # reply and state models (weltsuche/models.py), v2 api
+    "pydantic>=2.7,<3",
+]
+
+[tool.uv]
+# run from the checkout (uv run --directory ... python -m weltsuche); nothing
+# is built or installed as a package
+package = false
+
+[tool.pyright]
+# where uv puts the environment, so editors and language servers resolve the
+# imports the way `uv run` does
+venvPath = "."
+venv = ".venv"

@@ -1,0 +1,14 @@
+{
+  "name": "weltsuche",
+  "owner": {
+    "name": "weltsuche"
+  },
+  "description": "weltsuche, as its own marketplace: add this checkout (or its git url), then install weltsuche@weltsuche",
+  "plugins": [
+    {
+      "name": "weltsuche",
+      "source": "./",
+      "description": "multilingual web search and page reading for claude code"
+    }
+  ]
+}
